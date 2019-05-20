@@ -7,14 +7,19 @@
 //
 
 import UIKit
+import SafariServices
 
 class ViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewDidAppear( _ animated: Bool) {
+        super.viewDidAppear(animated)
         // Do any additional setup after loading the view.
+        
+        let urlString = "https://www.google.co.jp"
+        if let url = URL(string: urlString) {
+            let safariVC = SFSafariViewController(url: url)
+            present(safariVC, animated: true, completion: nil)
+        }
     }
-
-
 }
 

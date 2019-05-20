@@ -12,6 +12,10 @@
 		C1EA4CED22928CE600C58CB3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1EA4CEB22928CE600C58CB3 /* Main.storyboard */; };
 		C1EA4CEF22928CE700C58CB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1EA4CEE22928CE700C58CB3 /* Assets.xcassets */; };
 		C1EA4CF222928CE700C58CB3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1EA4CF022928CE700C58CB3 /* LaunchScreen.storyboard */; };
+		C1EA4CFA22928D1500C58CB3 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EA4CF922928D1500C58CB3 /* NotificationManager.swift */; };
+		C1EA4CFD22928D4200C58CB3 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1EA4CFC22928D4200C58CB3 /* CoreLocation.framework */; };
+		C1EA4CFF2292A2E300C58CB3 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1EA4CFE2292A2E300C58CB3 /* SafariServices.framework */; };
+		C1EA4D012292B99700C58CB3 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EA4D002292B99700C58CB3 /* LocationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,10 @@
 		C1EA4CEE22928CE700C58CB3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C1EA4CF122928CE700C58CB3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C1EA4CF322928CE700C58CB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C1EA4CF922928D1500C58CB3 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		C1EA4CFC22928D4200C58CB3 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		C1EA4CFE2292A2E300C58CB3 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
+		C1EA4D002292B99700C58CB3 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +37,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1EA4CFF2292A2E300C58CB3 /* SafariServices.framework in Frameworks */,
+				C1EA4CFD22928D4200C58CB3 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +50,7 @@
 			children = (
 				C1EA4CE622928CE600C58CB3 /* Central */,
 				C1EA4CE522928CE600C58CB3 /* Products */,
+				C1EA4CFB22928D4200C58CB3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,8 +71,19 @@
 				C1EA4CEE22928CE700C58CB3 /* Assets.xcassets */,
 				C1EA4CF022928CE700C58CB3 /* LaunchScreen.storyboard */,
 				C1EA4CF322928CE700C58CB3 /* Info.plist */,
+				C1EA4CF922928D1500C58CB3 /* NotificationManager.swift */,
+				C1EA4D002292B99700C58CB3 /* LocationManager.swift */,
 			);
 			path = Central;
+			sourceTree = "<group>";
+		};
+		C1EA4CFB22928D4200C58CB3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C1EA4CFE2292A2E300C58CB3 /* SafariServices.framework */,
+				C1EA4CFC22928D4200C58CB3 /* CoreLocation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -96,6 +118,11 @@
 				TargetAttributes = {
 					C1EA4CE322928CE600C58CB3 = {
 						CreatedOnToolsVersion = 10.2.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -135,6 +162,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1EA4D012292B99700C58CB3 /* LocationManager.swift in Sources */,
+				C1EA4CFA22928D1500C58CB3 /* NotificationManager.swift in Sources */,
 				C1EA4CEA22928CE600C58CB3 /* ViewController.swift in Sources */,
 				C1EA4CE822928CE600C58CB3 /* AppDelegate.swift in Sources */,
 			);
