@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import UserNotifications
 
+// TODO : 通知内容は全体的に見直す必要あり
 struct NotificationManager {
     
     static let workCategoryIdentifier = "CATEGORY_WORK"

@@ -16,6 +16,7 @@
 		C1EA4CFD22928D4200C58CB3 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1EA4CFC22928D4200C58CB3 /* CoreLocation.framework */; };
 		C1EA4CFF2292A2E300C58CB3 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1EA4CFE2292A2E300C58CB3 /* SafariServices.framework */; };
 		C1EA4D012292B99700C58CB3 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EA4D002292B99700C58CB3 /* LocationManager.swift */; };
+		C1EA4D0522937AAB00C58CB3 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1EA4D0422937AAB00C58CB3 /* CoreBluetooth.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		C1EA4CFC22928D4200C58CB3 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		C1EA4CFE2292A2E300C58CB3 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
 		C1EA4D002292B99700C58CB3 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		C1EA4D0422937AAB00C58CB3 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1EA4D0522937AAB00C58CB3 /* CoreBluetooth.framework in Frameworks */,
 				C1EA4CFF2292A2E300C58CB3 /* SafariServices.framework in Frameworks */,
 				C1EA4CFD22928D4200C58CB3 /* CoreLocation.framework in Frameworks */,
 			);
@@ -80,6 +83,7 @@
 		C1EA4CFB22928D4200C58CB3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C1EA4D0422937AAB00C58CB3 /* CoreBluetooth.framework */,
 				C1EA4CFE2292A2E300C58CB3 /* SafariServices.framework */,
 				C1EA4CFC22928D4200C58CB3 /* CoreLocation.framework */,
 			);

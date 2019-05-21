@@ -30,13 +30,13 @@ extension LocationManager: CLLocationManagerDelegate {
         manager.requestState(for: region)
     }
     
-    private func locationManager(manager: CLLocationManager,
-                                 didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+    func locationManager(_ manager: CLLocationManager,
+                         didChangeAuthorization status: CLAuthorizationStatus) {
         
         if status == .authorizedAlways || status == .authorizedWhenInUse {
             if CLLocationManager.isMonitoringAvailable(for: CLBeaconRegion.self) {
-                let uuid: NSUUID? = NSUUID(uuidString: "48534442-4C45-4144-80C0-1800FFFFFFF2")
-                let beaconID: String = "jp.co.houwa-js.test.blog"
+                let uuid: NSUUID? = NSUUID(uuidString: "01122334-4556-6778-899A-ABBCCDDEEFF0")
+                let beaconID: String = "com.akehoyayoi.beacon.trial"
                 let beaconRegion = CLBeaconRegion(proximityUUID: uuid! as UUID, identifier: beaconID)
                 beaconRegion.notifyEntryStateOnDisplay = true   // ディスプレイ表示中も通知する
                 manager.startMonitoring(for: beaconRegion)
@@ -47,25 +47,25 @@ extension LocationManager: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager,
                          didDetermineState state: CLRegionState,
                          for region: CLRegion) {
-        if state == .inside {
-            NotificationManager.postLocalNotificationIfNeeded(
-                message: "出勤しますか？",
-                category: NotificationManager.workCategoryIdentifier)
+
+        let uuid: NSUUID? = NSUUID(uuidString: "01122334-4556-6778-899A-ABBCCDDEEFF0")
+        let beaconID: String = "com.akehoyayoi.beacon.trial"
+        let beaconRegion = CLBeaconRegion(proximityUUID: uuid! as UUID, identifier: beaconID)
+        beaconRegion.notifyEntryStateOnDisplay = true   // ディスプレイ表示中も通知する
+        manager.startRangingBeacons(in: beaconRegion)
+    }
+    
+    func locationManager(_ manager: CLLocationManager,
+                         didRangeBeacons beacons: [CLBeacon],
+                         in region: CLBeaconRegion) {
+        if let beacon = beacons.first {
+            print(beacon)
+            // TODO : 優先度低　通信してUUIDから情報を取得する処理を入れる
+            
+            // TODO : 優先度高　通知すべき状態になったタイミングで通知を送る
+            print(beacon.major)
+            print(beacon.minor)
         }
-    }
-    
-    func locationManager(_ manager: CLLocationManager,
-                         didEnterRegion region: CLRegion) {
-        NotificationManager.postLocalNotificationIfNeeded(
-            message: "出勤しますか？",
-            category: NotificationManager.workCategoryIdentifier)
-    }
-    
-    func locationManager(_ manager: CLLocationManager,
-                         didExitRegion region: CLRegion) {
-        NotificationManager.postLocalNotificationIfNeeded(
-            message: "退勤しますか？",
-            category: NotificationManager.homeCategoryIdentifier)
     }
 }
 
